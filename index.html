@@ -4,18 +4,14 @@
     <title>Dice Roll</title>
     <script>
         function rollDice() {
-            // Use JavaScript to call the Java program via an applet (requires Java plugin)
-            var applet = document.getElementById("diceApplet");
-            applet.rollDice();
+            var result = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
+            document.getElementById("diceResult").innerHTML = "You rolled a " + result;
         }
     </script>
 </head>
 <body>
     <h1>Dice Roll</h1>
     <button onclick="rollDice()">Roll the Dice</button>
-
-    <applet id="diceApplet" code="DiceRoll.class" width="1" height="1">
-        <param name="separate_jvm" value="true">
-    </applet>
+    <p id="diceResult"></p>
 </body>
 </html>
